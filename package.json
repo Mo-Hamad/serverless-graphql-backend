@@ -2,9 +2,9 @@
   "name": "serverless_graphql_aws",
   "version": "1.0.0",
   "description": "Serverless GraphQL API that will use AWS",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
-    "start": "node index.js",
+    "start": "node index.ts",
     "test": "test"
   },
   "repository": {
@@ -16,5 +16,19 @@
   "bugs": {
     "url": "https://github.com/Mo-Hamad/Serverless_GraphQL_AWS/issues"
   },
-  "homepage": "https://github.com/Mo-Hamad/Serverless_GraphQL_AWS#readme"
+  "homepage": "https://github.com/Mo-Hamad/Serverless_GraphQL_AWS#readme",
+  "dependencies": {
+    "apollo-server-lambda": "^3.13.0",
+    "aws-sdk": "^2.1692.0",
+    "dotenv": "^16.4.7",
+    "graphql": "^16.10.0"
+  },
+  "devDependencies": {
+    "eslint": "^9.22.0",
+    "nodemon": "^3.1.9",
+    "prettier": "^3.5.3",
+    "serverless": "^4.8.0",
+    "serverless-offline": "^14.4.0",
+    "vitest": "^3.0.8"
+  }
 }
