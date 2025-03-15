@@ -35,5 +35,11 @@ npm start
 
 This command will start your Apollo Server as defined in `server.ts`.
 
-## Additional Information
+## Additional Configuration
 
+Before you run the project, ensure that your AWS credentials are correctly configured:
+
+- **Configure AWS Credentials:**  
+  Run the following command and provide your AWS Access Key, Secret Access Key, and region when prompted:
+  ```bash
+  aws configure
