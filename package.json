@@ -7,7 +7,8 @@
   "scripts": {
     "compile": "tsc",
     "start": "npm run compile && node ./dist/server.js",
-    "test": "vitest"
+    "test": "vitest",
+    "serverless": "serverless invoke local -f graphql -p query.json"
   },
   "repository": {
     "type": "tsc",
@@ -21,6 +22,7 @@
   "homepage": "https://github.com/Mo-Hamad/Serverless_GraphQL_AWS#readme",
   "dependencies": {
     "@apollo/server": "^4.11.3",
+    "@as-integrations/aws-lambda": "^3.1.0",
     "aws-sdk": "^2.1692.0",
     "dotenv": "^16.4.7",
     "graphql": "^16.10.0"
@@ -32,6 +34,7 @@
     "prettier": "^3.5.3",
     "serverless": "^4.8.0",
     "serverless-offline": "^14.4.0",
+    "serverless-plugin-typescript": "^2.1.5",
     "typescript": "^5.8.2",
     "vitest": "^3.0.8"
   }

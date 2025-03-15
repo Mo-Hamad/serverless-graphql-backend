@@ -1,47 +1,34 @@
-import { ApolloServer } from "@apollo/server";
-import { startStandaloneServer } from "@apollo/server/standalone";
+import { ApolloServer } from '@apollo/server';
+// highlight-start
+import {
+  startServerAndCreateLambdaHandler,
+  handlers,
+} from '@as-integrations/aws-lambda';
+// highlight-end
 
 const typeDefs = `#graphql
-    type Book{
-        title: String
-        author: String
-    }
-
-    type Query {
-        hello: String
-        books: [Book]
-
-    }`;
-
-const books = [
-    {
-        title: 'Harry Potter and the Chamber of Secrets',
-        author: 'J.K. Rowling',
-    },
-    {
-        title: 'Jurassic Park',
-        author: 'Michael Crichton',
-    },
-    {
-        title: 'The Da Vinci Code',
-        author: 'Dan Brown',
-    },
-];
+  type Query {
+    hello: String
+  }
+`;
 
 const resolvers = {
-    Query: {
-        hello: () => 'world',
-        books: () => books,
-    },
+  Query: {
+    hello: () => 'world',
+  },
 };
 
 const server = new ApolloServer({
-    typeDefs,
-    resolvers,
+  typeDefs,
+  resolvers,
+  introspection: true,
 });
 
-const { url } = await startStandaloneServer(server, {
-    listen: { port: 4000 },
-});
-
-console.log(`🚀  Server ready at: ${url}`);
+// This final export is important!
+// highlight-start
+export const graphqlHandler = startServerAndCreateLambdaHandler(
+  server,
+  // We will be using the Proxy V2 handler
+  handlers.createAPIGatewayProxyEventV2RequestHandler()
+);
+// highlight-end
