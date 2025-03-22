@@ -8,7 +8,8 @@
     "compile": "tsc",
     "start": "npm run compile && node ./dist/server.js",
     "test": "vitest",
-    "serverless": "serverless invoke local -f graphql -p query.json"
+    "serverless": "npm run compile && serverless invoke local -f graphql -p query.json",
+    "serverless:deploy": "npm run compile && serverless dev"
   },
   "repository": {
     "type": "tsc",
@@ -34,7 +35,6 @@
     "prettier": "^3.5.3",
     "serverless": "^4.8.0",
     "serverless-offline": "^14.4.0",
-    "serverless-plugin-typescript": "^2.1.5",
     "typescript": "^5.8.2",
     "vitest": "^3.0.8"
   }
