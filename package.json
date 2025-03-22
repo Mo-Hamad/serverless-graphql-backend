@@ -13,14 +13,14 @@
   },
   "repository": {
     "type": "tsc",
-    "url": "git+https://github.com/Mo-Hamad/Serverless_GraphQL_AWS.git"
+    "url":"https://github.com/Mo-Hamad/serverless-graphql-backend.git"
   },
   "author": "Mo-Hamad",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Mo-Hamad/Serverless_GraphQL_AWS/issues"
+    "url": "https://github.com/Mo-Hamad/serverless-graphql-backend/issues"
   },
-  "homepage": "https://github.com/Mo-Hamad/Serverless_GraphQL_AWS#readme",
+  "homepage": "https://github.com/Mo-Hamad/serverless-graphql-backend#readme",
   "dependencies": {
     "@apollo/server": "^4.11.3",
     "@as-integrations/aws-lambda": "^3.1.0",
